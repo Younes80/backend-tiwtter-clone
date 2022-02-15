@@ -1,0 +1,9 @@
+div(class="search-menu d-flex flex-column p-2")
+    if users && users.length
+        each user in users
+            a(class="d-flex flex-row align-items-center search-menu-item cursor-pointer text-decoration-none text-muted" href="/users/" + user.username)
+                img(src=user.avatar, alt="" width="50" height="50" class="mb-2" )
+                span(class="ps-3")= user.username
+    else 
+        div(class="d-flex justify-content-center")
+            span Aucun utilisateur
