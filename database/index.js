@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 
+const dbMongo = process.env.DB_MONGO;
+
 exports.clientPromise = mongoose
-	.connect(
-		'mongodb+srv://younes:ApQm102938475@cluster0.scyv1.mongodb.net/twitter?retryWrites=true&w=majority',
-		{
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-			useCreateIndex: true,
-		}
-	)
+	.connect(dbMongo, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+	})
 	// .then(() => {
 	// 	console.log('connexion ok !');
 	// })
