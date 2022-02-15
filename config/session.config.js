@@ -3,9 +3,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const { clientPromise } = require('../database');
 
+const secretSession = process.env.SECRET_SESSION;
+
 app.use(
 	session({
-		secret: 'je suis un secret',
+		secret: secretSession,
 		resave: false,
 		saveUninitialized: false,
 		cookie: {
